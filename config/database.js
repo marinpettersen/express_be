@@ -16,11 +16,12 @@ require('dotenv').config();  // Mengimpor dotenv untuk memuat variabel lingkunga
 
 // Konfigurasi Pool dengan URL dari variabel lingkungan, jika tersedia
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || 'postgresql://postgres:wBTxaOloXiwqwIGCsZxSDBLEIbIpAMWs@autorack.proxy.rlwy.net:41127/railway',
-    ssl: process.env.DATABASE_URL ? {
+    connectionString: process.env.DATABASE_URL || 'postgres://u374jdm29knbfe:p46f194cb39aa1f95e0c3c3b6308e1c4f6d111f38f0377c70cfcdcc1f371fa0aa@c67okggoj39697.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dbeg92gpt2i5kv',
+    ssl: {
         rejectUnauthorized: false,
-    } : false,
+    },
     connectTimeout: 5000,
 });
 
 module.exports = pool;
+
